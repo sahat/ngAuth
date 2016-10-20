@@ -1,34 +1,34 @@
 {
   "name": "satellizer",
   "description": "Token-based AngularJS Authentication",
-  "version": "0.15.5",
+  "version": "0.15.6",
   "main": "dist/satellizer.js",
   "scripts": {
     "start": "supervisor ./examples/server/node/server.js",
     "test": "karma start",
-    "build": "npm run clean && tsc && rollup -c && uglifyjs dist/satellizer.js -o dist/satellizer.min.js && npm run copy",
+    "build": "npm run clean && tsc && rollup -c && uglifyjs dist\\satellizer.js -o dist\\satellizer.min.js && npm run copy",
     "clean": "rimraf build dist",
     "copy": "npm-run-all copy:*",
-    "copy:angular": "cp dist/satellizer.js examples/client/vendor",
-    "copy:ionic": "cp -R dist examples/ionic/www/lib/satellizer",
-    "copy:php": "cp -R examples/client/ examples/server/php/public/",
+    "copy:angular": "copy dist\\satellizer.js examples\\client\\vendor",
+    "copy:ionic": "copy dist\\* examples\\ionic\\www\\lib\\satellizer",
+    "copy:php": "copy examples\\client\\* examples\\server\\php\\public\\",
     "bump": "npm version patch",
     "postversion": "npm test && npm run build && git add -A dist && git commit -m 'Release'",
     "publish-please": "publish-please",
     "prepublish": "publish-please guard"
   },
   "author": {
-    "name": "Sahat Yalkabov",
-    "email": "sahat@me.com",
-    "url": "http://sahatyalkabov.com"
+    "name": "cskiwi Yalkabov",
+    "email": "cskiwi@me.com",
+    "url": "http://cskiwiyalkabov.com"
   },
-  "homepage": "https://github.com/sahat/satellizer",
+  "homepage": "https://github.com/cskiwi/satellizer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/satellizer.git"
+    "url": "https://github.com/cskiwi/satellizer.git"
   },
   "bugs": {
-    "url": "https://github.com/sahat/satellizer/issues"
+    "url": "https://github.com/cskiwi/satellizer/issues"
   },
   "license": "MIT",
   "devDependencies": {
